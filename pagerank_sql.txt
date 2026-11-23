@@ -1,0 +1,6 @@
+-- Show Pages that target the "Arg"
+SELECT page.page_id AS Origin_ID, page.page_title AS Origin, linktarget.lt_title AS Target FROM page
+INNER JOIN pagelinks ON page.page_id = pagelinks.pl_from
+INNER JOIN linktarget ON pagelinks.pl_target_id  = linktarget.lt_id
+WHERE linktarget.lt_title = 'Python';
+

@@ -1,0 +1,14 @@
+{
+	"[python]": {
+		"editor.insertSpaces": true,
+		"editor.tabSize": 4,
+		"editor.detectIndentation": false,
+		"editor.defaultFormatter": "ms-python.black-formatter",
+		"editor.formatOnSave": true,
+	},
+	"editor.detectIndentation": false,
+	"editor.defaultFormatter": "ms-python.black-formatter",
+	"[jsonc]": {
+		"editor.defaultFormatter": "vscode.json-language-features"
+	}
+}

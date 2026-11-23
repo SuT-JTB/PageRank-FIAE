@@ -1,5 +1,6 @@
 import unittest
 
+
 class Page:
     def __init__(self, id: str, rank: float, outLink: list, inLink: list):
         self.id = id
@@ -10,6 +11,7 @@ class Page:
     def inOutLink(self, page: "Page") -> None:
         self.outLink.append(page)
         page.inLink.append(self)
+
 
 class Graph:
     def __init__(self, pages: list[Page]):
@@ -24,9 +26,9 @@ class Graph:
         for _ in range(iterations):
             for page in self.pages:
                 page.rank = (1 - d) + d * sum(
-                    inPage.rank / len(inPage.outLink)
-                    for inPage in page.inLink
+                    inPage.rank / len(inPage.outLink) for inPage in page.inLink
                 )
+
 
 class TestPageRank(unittest.TestCase):
     def test_inOutLink_creates_bidirectional_link(self):
@@ -61,6 +63,7 @@ class TestPageRank(unittest.TestCase):
 
         self.assertGreater(a.rank, 0)
         self.assertGreater(b.rank, 0)
+
 
 if __name__ == "__main__":
     unittest.main()

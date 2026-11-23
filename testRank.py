@@ -28,6 +28,7 @@ class Graph:
                 page.rank = (1 - d) + d * sum(
                     inPage.rank / len(inPage.outLink) for inPage in page.inLink
                 )
+                # print(f"{page.id}: {str(round(page.rank, 3))}")
 
     def printRanks(self):
         for page in self.pages:
@@ -101,4 +102,4 @@ def scenario_excel():
 
 # scenario_1()
 # scenario_2()
-scenario_excel()
+# scenario_excel()
